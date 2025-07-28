@@ -79,4 +79,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
+  timeout: 5000
+
+  cable:
+    url: <%= ENV['DATABASE_URL'] %>
