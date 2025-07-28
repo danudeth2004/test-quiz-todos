@@ -80,5 +80,16 @@ test:
 #
 production:
   <<: *default
-  database: test_todos_quiz_development
+  database: your_production_db_name
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
+  timeout: 5000
+
+cable:
+  <<: *default
+  database: your_cable_db_name
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
