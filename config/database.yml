@@ -81,8 +81,4 @@ test:
 production:
   <<: *default
   database: test_todos_quiz_development
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
-  pool: 5
-  timeout: 5000
